@@ -1,0 +1,7 @@
+C:/Users/aneso/Documents/GitHub/sp-exam/cmake-build-release/CMakeFiles/doctest.dir
+C:/Users/aneso/Documents/GitHub/sp-exam/cmake-build-release/CMakeFiles/stock_trading.dir
+C:/Users/aneso/Documents/GitHub/sp-exam/cmake-build-release/CMakeFiles/sp_exam.dir
+C:/Users/aneso/Documents/GitHub/sp-exam/cmake-build-release/CMakeFiles/test_doc.dir
+C:/Users/aneso/Documents/GitHub/sp-exam/cmake-build-release/CMakeFiles/test.dir
+C:/Users/aneso/Documents/GitHub/sp-exam/cmake-build-release/CMakeFiles/edit_cache.dir
+C:/Users/aneso/Documents/GitHub/sp-exam/cmake-build-release/CMakeFiles/rebuild_cache.dir
