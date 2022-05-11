@@ -28,7 +28,7 @@ namespace stock_trading {
             amount = json_trade["amount"];
         }
 
-        int64_t get_time_milliseconds() const {
+        int64_t get_time_milliseconds() {
             return time.time_since_epoch().count();
         }
 

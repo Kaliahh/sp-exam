@@ -55,12 +55,6 @@ build doctest: phony
 
 build cmake_object_order_depends_target_stock_trading: phony || CMakeFiles/stock_trading.dir
 
-build CMakeFiles/stock_trading.dir/src/main.cpp.obj: CXX_COMPILER__stock_trading_Debug C$:/Users/aneso/Documents/GitHub/sp-exam/src/main.cpp || cmake_object_order_depends_target_stock_trading
-  DEP_FILE = CMakeFiles\stock_trading.dir\src\main.cpp.obj.d
-  FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles\stock_trading.dir
-  OBJECT_FILE_DIR = CMakeFiles\stock_trading.dir\src
-
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target stock_trading
@@ -69,7 +63,7 @@ build CMakeFiles/stock_trading.dir/src/main.cpp.obj: CXX_COMPILER__stock_trading
 #############################################
 # Link the static library libstock_trading.a
 
-build libstock_trading.a: CXX_STATIC_LIBRARY_LINKER__stock_trading_Debug CMakeFiles/stock_trading.dir/src/main.cpp.obj
+build libstock_trading.a: CXX_STATIC_LIBRARY_LINKER__stock_trading_Debug
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles\stock_trading.dir
   POST_BUILD = cd .

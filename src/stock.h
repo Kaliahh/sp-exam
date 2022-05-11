@@ -36,15 +36,13 @@ namespace stock_trading {
 
         vector<candle_stick> compute_candlesticks(const std::chrono::time_point<system_clock, milliseconds>& time_step) {
             vector<candle_stick> result{};
-
-            int64_t current_time = trades[0].get_time_milliseconds() + time_step.time_since_epoch().count();
-
-            int index = 0;
+            auto time_pivot = trades[0].get_time() + time_step.time_since_epoch();
+            auto index = 0;
 
             while (index < trades.size()) {
                 candle_stick cs{};
 
-                if (trades[index].get_time_milliseconds() < current_time) {
+                if (trades[index].get_time() < time_pivot) {
                     if (index == 0) {
                         cs.set_initial(trades[index].price);
                     }
@@ -53,11 +51,11 @@ namespace stock_trading {
                     }
                 }
                 else {
-                    current_time += time_step.time_since_epoch().count();
+                    time_pivot += time_step.time_since_epoch();
                     continue;
                 }
 
-                while (index < trades.size() && trades[index].get_time_milliseconds() < current_time) {
+                while (index < trades.size() && trades[index].get_time() < time_pivot) {
                     if (trades[index].price > cs.maximum_price) {
                         cs.maximum_price = trades[index].price;
                     }
@@ -70,7 +68,7 @@ namespace stock_trading {
 
                 result.emplace_back(cs);
 
-                current_time += time_step.time_since_epoch().count();
+                time_pivot += time_step.time_since_epoch();
             }
 
             return result;

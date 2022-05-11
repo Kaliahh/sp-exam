@@ -1,1 +1,3 @@
 data/
+cmake-build-release/
+cmake-build-debug/

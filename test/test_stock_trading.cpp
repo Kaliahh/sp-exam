@@ -87,9 +87,13 @@ TEST_CASE("stock_parser_directly_from_json") {
     CHECK(s.trades[0].amount == 100);
     CHECK(s.trades[0].price == 100);
     CHECK(s.trades[0].get_time_milliseconds() == 0);
+    CHECK(s.trades[0].get_time() == std::chrono::time_point<system_clock, milliseconds>(duration<int, milli>(0)));
     CHECK(s.trades[1].amount == 300);
     CHECK(s.trades[1].price == 300);
     CHECK(s.trades[1].get_time_milliseconds() == 1);
+    CHECK(s.trades[1].get_time() == std::chrono::time_point<system_clock, milliseconds>(duration<int, milli>(1)));
+    CHECK(s.trades[3].get_time() == std::chrono::time_point<system_clock, seconds>(duration<int>(1)));
+    CHECK(s.trades[6].get_time() == std::chrono::time_point<system_clock, seconds>(duration<int>(90)));
 }
 
 
