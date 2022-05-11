@@ -11,12 +11,12 @@
 namespace stock_trading {
 
     struct candle_stick {
-        int32_t opening_price;
-        int32_t closing_price;
-        int32_t maximum_price;
-        int32_t minimum_price;
+        double opening_price;
+        double closing_price;
+        double maximum_price;
+        double minimum_price;
 
-        void set_initial(int32_t initial) {
+        void set_initial(double initial) {
             opening_price = initial;
             closing_price = initial;
             maximum_price = initial;

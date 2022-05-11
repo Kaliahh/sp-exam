@@ -17,7 +17,7 @@ namespace stock_trading {
 
     struct stock {
         std::string tag;
-        int64_t shares{};
+        long long shares{};
         std::vector<trade> trades;
 
         stock() = default;

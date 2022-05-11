@@ -19,8 +19,8 @@ namespace stock_trading {
 
     struct trade {
 
-        int32_t price;
-        int32_t amount;
+        double price;
+        long int amount;
 
         explicit trade(const json& json_trade) {
             time = string_to_milliseconds(json_trade["time"]);

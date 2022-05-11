@@ -96,6 +96,28 @@ TEST_CASE("stock_parser_directly_from_json") {
     CHECK(s.trades[6].get_time() == std::chrono::time_point<system_clock, seconds>(duration<int>(90)));
 }
 
+json create_test_json_with_double() {
+    return {
+            {"tag", "TEST"},
+            {"shares", 1000},
+            {"trades",
+                    {
+                            {
+                                    {"time", "1970-01-01T00:00:00.000+0000"},
+                                    {"price", 100.1},
+                                    {"amount", 100}
+                            }
+                    }
+            }
+    };
+}
+
+TEST_CASE("stock_parser_directly_from_json_with_double") {
+    stock_trading::stock s = stock_trading::stock_parser::parse_to_stock(create_test_json_with_double());
+
+    CHECK(s.trades[0].price == 100.1);
+}
+
 
 TEST_CASE("trades_can_be_ordered") {
     stock_trading::stock s = stock_trading::stock_parser::parse_to_stock(create_test_json());
