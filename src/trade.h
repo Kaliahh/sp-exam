@@ -39,8 +39,6 @@ namespace stock_trading {
         friend bool operator<(const trade& a, const trade& b);
         friend bool operator>(const trade& a, const trade& b);
 
-
-
     private:
         time_point<system_clock, milliseconds> time;
 

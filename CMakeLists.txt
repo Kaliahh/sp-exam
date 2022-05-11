@@ -7,7 +7,7 @@ file(DOWNLOAD https://raw.githubusercontent.com/onqtam/doctest/v2.4.8/doctest/do
 add_library(doctest INTERFACE doctest.h)
 target_include_directories(doctest INTERFACE ${CMAKE_CURRENT_BINARY_DIR})
 
-add_library(stock_trading src/stock_parser.h src/stock.h src/trade.h include/json.h include/date.h src/candle_stick.h)
+add_library(stock_trading src/stock_parser.h src/stock.h src/trade.h include/json.h include/date.h src/candle_stick.h src/oscillator_result.h)
 set_target_properties(stock_trading PROPERTIES LINKER_LANGUAGE CXX)
 
 add_executable(sp_exam src/main.cpp)

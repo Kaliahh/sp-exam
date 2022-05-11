@@ -11,16 +11,20 @@
 namespace stock_trading {
 
     struct candle_stick {
-        double opening_price;
-        double closing_price;
-        double maximum_price;
-        double minimum_price;
+        double opening_price{};
+        double closing_price{};
+        double maximum_price{};
+        double minimum_price{};
+        time_point<system_clock, milliseconds> opening_time{};
+        time_point<system_clock, milliseconds> closing_time{};
 
-        void set_initial(double initial) {
-            opening_price = initial;
-            closing_price = initial;
-            maximum_price = initial;
-            minimum_price = initial;
+        void set_initial(double price, time_point<system_clock, milliseconds> time) {
+            opening_price = price;
+            closing_price = price;
+            maximum_price = price;
+            minimum_price = price;
+            opening_time = time;
+            closing_time = time;
         }
     };
 
